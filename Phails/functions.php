@@ -46,7 +46,7 @@ function puts($text, $replacements = [])
     }
 
     // Objects
-    if (is_object($text)) {
+    if (is_obj($text)) {
         echo $text->toString($replacements);
     }
     // Array
@@ -57,4 +57,9 @@ function puts($text, $replacements = [])
     else {
         echo $text;
     }
+}
+
+function is_obj($object)
+{
+    return (is_object($object) and get_class($object) === "Phails\Obj");
 }

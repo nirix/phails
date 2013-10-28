@@ -56,7 +56,7 @@ class Str extends Obj
 
     public function includes($string)
     {
-        if (is_object($string)) {
+        if (is_obj($string)) {
             $string = $string->toString();
         }
 

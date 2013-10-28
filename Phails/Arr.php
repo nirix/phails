@@ -133,7 +133,7 @@ class Arr extends Obj
      */
     public function includes($search)
     {
-        if (is_object($search)) {
+        if (is_obj($search)) {
             $search = $search->toString();
         }
 
