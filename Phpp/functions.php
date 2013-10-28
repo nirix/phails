@@ -48,7 +48,7 @@ function puts($text, $replacements = []) {
     }
     // Array
     elseif (is_array($text)) {
-        print_r($text);
+        echo arr($text)->_toString();
     }
     // Whatever
     else {
