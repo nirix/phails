@@ -40,7 +40,17 @@ class Str extends Obj
 
     public function toString($replacements = [])
     {
-        return $this->string;
+        if (!is_arr($replacements)) {
+            $replacements = arr($replacements);
+        }
+
+        $string = $this->string;
+
+        foreach ($replacements->arr() as $key => $value) {
+            $string = str_replace("{{$key}}", $value, $string);
+        }
+
+        return $string;
     }
 
     public function replace($old, $new)
@@ -66,5 +76,10 @@ class Str extends Obj
         }
 
         return strpos($this->string, $string) !== false;
+    }
+
+    public function string()
+    {
+        return $this->string;
     }
 }
