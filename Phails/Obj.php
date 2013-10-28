@@ -29,7 +29,8 @@
 
 namespace Phails;
 
-class Obj {
+class Obj
+{
     public function _toString()
     {
         throw new \Exception("_toString() is not implemented on " . get_called_class());

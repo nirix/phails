@@ -29,22 +29,27 @@
 
 namespace Phails;
 
-class Str extends Obj {
+class Str extends Obj
+{
     protected $string;
 
-    public function __construct($string) {
+    public function __construct($string)
+    {
         $this->string = $string;
     }
 
-    public function _toString($replacements = []) {
+    public function _toString($replacements = [])
+    {
         return $this->string;
     }
 
-    public function split($exploder) {
+    public function split($exploder)
+    {
         return new Arr(explode($exploder, $this->string));
     }
 
-    public function match($pattern) {
+    public function match($pattern)
+    {
         preg_match($pattern, $this->string, $matches);
         return new Arr($matches);
     }

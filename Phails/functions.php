@@ -27,15 +27,18 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-function str($string) {
+function str($string)
+{
     return new \Phails\Str($string);
 }
 
-function arr(Array $array = []) {
+function arr(Array $array = [])
+{
     return new \Phails\Arr($array);
 }
 
-function puts($text, $replacements = []) {
+function puts($text, $replacements = [])
+{
     if (is_array($replacements)) {
         $replacements = arr($replacements);
     } elseif (!is_object($replacements) or !get_class($replacements) != "\\Phails\\Array") {

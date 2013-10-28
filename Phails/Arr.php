@@ -34,13 +34,15 @@ namespace Phails;
  *
  * @package Phails
  */
-class Arr extends Obj {
+class Arr extends Obj
+{
     protected $array;
 
     /**
      * @param array $array The array to be used, obviously.
      */
-    public function __construct(Array $array = []) {
+    public function __construct(Array $array = [])
+    {
         $this->array = $array;
     }
 
@@ -49,7 +51,8 @@ class Arr extends Obj {
      *
      * @return object
      */
-    public function _toString() {
+    public function _toString()
+    {
         return Str(json_encode($this->array));
     }
 
@@ -71,7 +74,8 @@ class Arr extends Obj {
      *
      * @return object
      */
-    public function join($imploder = '') {
+    public function join($imploder = '')
+    {
         return Str(implode($imploder, $this->array));
     }
 
@@ -81,7 +85,8 @@ class Arr extends Obj {
      *
      * @param function $block
      */
-    public function each($block) {
+    public function each($block)
+    {
         foreach ($this->array as $key => $val) {
             $block($key, $val);
         }
@@ -93,7 +98,8 @@ class Arr extends Obj {
      * @param string $key
      * @param mixed $value
      */
-    public function push($key, $value = '~NULL') {
+    public function push($key, $value = '~NULL')
+    {
         // Yes, this is stupid, but whatever.
         if ($value === '~NULL') {
             $this->array[] = $key;
@@ -109,7 +115,8 @@ class Arr extends Obj {
      *
      * @return mixed
      */
-    public function get($key) {
+    public function get($key)
+    {
         if (isset($this->array[$key])) {
             return $this->array[$key];
         } else {
@@ -126,7 +133,8 @@ class Arr extends Obj {
      *
      * @return array
      */
-    public function arr() {
+    public function arr()
+    {
         return $this->array;
     }
 }
