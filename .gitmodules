@@ -1,0 +1,3 @@
+[submodule "PhpTest"]
+	path = PhpTest
+	url = https://github.com/nirix/phptest.git
