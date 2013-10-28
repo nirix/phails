@@ -1,5 +1,5 @@
 <?php
-require 'Phpp/init.php';
+require 'Phails/init.php';
 require 'PhpTest/init.php';
 
 function capture_puts($content)
