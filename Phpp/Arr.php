@@ -29,35 +29,86 @@
 
 namespace Phpp;
 
+/**
+ * The array class to easily perform actions on arrays.
+ *
+ * @package PHP-Plus
+ */
 class Arr extends Object {
     protected $array;
 
+    /**
+     * @param array $array The array to be used, obviously.
+     */
     public function __construct(Array $array = []) {
         $this->array = $array;
     }
 
+    /**
+     * Returns the array as a json_encoded string.
+     *
+     * @return object
+     */
     public function _toString() {
-        return json_encode($this->array);
+        return Str(json_encode($this->array));
     }
 
-    public function join($imploder) {
-        return implode($imploder, $this->array);
+    /**
+     * Returns the array as an actual string in json_encoded format.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return json_encode($this->array());
     }
 
+    /**
+     * Joins the array into a string with each value separated
+     * by the passed string.
+     *
+     * @param string $imploder
+     *
+     * @return object
+     */
+    public function join($imploder = '') {
+        return Str(implode($imploder, $this->array));
+    }
+
+    /**
+     * Loops over each array element and runs the passed
+     * function.
+     *
+     * @param function $block
+     */
     public function each($block) {
         foreach ($this->array as $key => $val) {
             $block($key, $val);
         }
     }
 
-    public function push($key, $val = '~NULL') {
-        if ($val === '~NULL') {
+    /**
+     * Pushes the passed value as the passed key into the array.
+     *
+     * @param string $key
+     * @param mixed $value
+     */
+    public function push($key, $value = '~NULL') {
+        // Yes, this is stupid, but whatever.
+        if ($value === '~NULL') {
             $this->array[] = $key;
         } else {
-            $this->array[$key] = $val;
+            $this->array[$key] = $value;
         }
     }
 
+    /**
+     * Returns the value of the passed array key.
+     *
+     * @param string $key
+     *
+     * @return mixed
+     */
     public function get($key) {
         if (isset($this->array[$key])) {
             return $this->array[$key];
