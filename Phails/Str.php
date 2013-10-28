@@ -38,7 +38,7 @@ class Str extends Obj
         $this->string = $string;
     }
 
-    public function _toString($replacements = [])
+    public function toString($replacements = [])
     {
         return $this->string;
     }

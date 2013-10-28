@@ -31,13 +31,13 @@ namespace Phails;
 
 class Obj
 {
-    public function _toString()
+    public function toString()
     {
         throw new \Exception("_toString() is not implemented on " . get_called_class());
     }
 
     public function __toString()
     {
-        return $this->_toString();
+        return $this->toString();
     }
 }

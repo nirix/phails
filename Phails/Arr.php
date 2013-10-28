@@ -51,7 +51,7 @@ class Arr extends Obj
      *
      * @return object
      */
-    public function _toString()
+    public function toString()
     {
         return Str(json_encode($this->array));
     }
@@ -63,7 +63,7 @@ class Arr extends Obj
      */
     public function __toString()
     {
-        return json_encode($this->array());
+        return json_encode($this->array);
     }
 
     /**
@@ -120,7 +120,7 @@ class Arr extends Obj
         if (isset($this->array[$key])) {
             return $this->array[$key];
         } else {
-            throw new \Exception("Key `{$key}` not found in Array: " . $this->_toString());
+            throw new \Exception("Key `{$key}` not found in Array: " . $this->toString());
         }
     }
 

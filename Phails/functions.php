@@ -47,11 +47,11 @@ function puts($text, $replacements = [])
 
     // Objects
     if (is_object($text)) {
-        echo $text->_toString($replacements);
+        echo $text->toString($replacements);
     }
     // Array
     elseif (is_array($text)) {
-        echo arr($text)->_toString();
+        echo arr($text)->toString();
     }
     // Whatever
     else {
