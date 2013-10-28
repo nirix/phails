@@ -41,7 +41,7 @@ function puts($text, $replacements = [])
 {
     if (is_array($replacements)) {
         $replacements = arr($replacements);
-    } elseif (!is_object($replacements) or !get_class($replacements) != "\\Phails\\Array") {
+    } elseif (!is_object($replacements) or get_class($replacements) != "Phails\Arr") {
         throw new \InvalidArgumentException("puts() requires the second parameter to be an array.");
     }
 
