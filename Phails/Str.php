@@ -53,4 +53,13 @@ class Str extends Obj
         preg_match($pattern, $this->string, $matches);
         return new Arr($matches);
     }
+
+    public function includes($string)
+    {
+        if (is_object($string)) {
+            $string = $string->toString();
+        }
+
+        return strpos($this->string, $string) !== false;
+    }
 }

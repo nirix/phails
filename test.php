@@ -18,3 +18,7 @@ test("should split string and print array", function($test){
     $test_array = str("Hello, world")->split(', ');
     $test->shouldEqual('["Hello","world"]', capture_puts($test_array));
 });
+
+test("should return true for string->includes()", function($test){
+    $test->assertTrue(str('Test string')->includes('sing'));
+});
