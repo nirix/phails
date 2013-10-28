@@ -37,7 +37,7 @@ class Str extends Object {
     }
 
     public function _toString($replacements = []) {
-        echo $this->string;
+        return $this->string;
     }
 
     public function split($exploder) {
