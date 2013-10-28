@@ -41,7 +41,7 @@ function puts($text, $replacements = [])
 {
     if (is_array($replacements)) {
         $replacements = arr($replacements);
-    } elseif (!is_object($replacements) or get_class($replacements) != "Phails\Arr") {
+    } elseif (!is_arr($replacements)) {
         throw new \InvalidArgumentException("puts() requires the second parameter to be an array.");
     }
 
@@ -62,4 +62,9 @@ function puts($text, $replacements = [])
 function is_obj($object)
 {
     return (is_object($object) and in_array("Phails\Obj", class_parents($object)));
+}
+
+function is_arr($object)
+{
+    return (is_object($object) and get_class($object) === "Phails\Arr");
 }
