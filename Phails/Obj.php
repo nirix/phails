@@ -29,7 +29,7 @@
 
 namespace Phails;
 
-class Obj
+abstract class Obj
 {
     public function toString()
     {
