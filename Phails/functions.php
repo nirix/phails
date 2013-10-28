@@ -27,20 +27,18 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace Phails;
-
 function str($string) {
-    return new \Phpp\Str($string);
+    return new \Phails\Str($string);
 }
 
 function arr(Array $array = []) {
-    return new \Phpp\Arr($array);
+    return new \Phails\Arr($array);
 }
 
 function puts($text, $replacements = []) {
     if (is_array($replacements)) {
         $replacements = arr($replacements);
-    } elseif (!is_object($replacements) or !get_class($replacements) != "\\Phpp\\Array") {
+    } elseif (!is_object($replacements) or !get_class($replacements) != "\\Phails\\Array") {
         throw new \InvalidArgumentException("puts() requires the second parameter to be an array.");
     }
 
