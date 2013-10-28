@@ -61,5 +61,5 @@ function puts($text, $replacements = [])
 
 function is_obj($object)
 {
-    return (is_object($object) and get_class($object) === "Phails\Obj");
+    return (is_object($object) and in_array("Phails\Obj", class_parents($object)));
 }
