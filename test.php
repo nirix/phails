@@ -1,6 +1,6 @@
 <?php
 require 'Phails/init.php';
-require 'PhpTest/init.php';
+require 'PhailSafe/init.php';
 
 function capture_puts($content)
 {
