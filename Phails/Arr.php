@@ -32,7 +32,7 @@ namespace Phails;
 /**
  * The array class to easily perform actions on arrays.
  *
- * @package PHP-Plus
+ * @package Phails
  */
 class Arr extends Obj {
     protected $array;
