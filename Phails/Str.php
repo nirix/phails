@@ -43,6 +43,11 @@ class Str extends Obj
         return $this->string;
     }
 
+    public function replace($old, $new)
+    {
+        return Str(str_replace($old, $new, $this->string));
+    }
+
     public function split($exploder)
     {
         return new Arr(explode($exploder, $this->string));
