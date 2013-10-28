@@ -125,6 +125,22 @@ class Arr extends Obj
     }
 
     /**
+     * Checks if the passed string is in the array.
+     *
+     * @param mixed $search
+     *
+     * @return boolean
+     */
+    public function includes($search)
+    {
+        if (is_object($search)) {
+            $search = $search->toString();
+        }
+
+        return in_array($search, $this->array);
+    }
+
+    /**
      * Simply returns the actual array being used.
      *
      * Yes, we could just return the $array variable

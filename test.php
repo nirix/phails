@@ -20,5 +20,9 @@ test("should split string and print array", function($test){
 });
 
 test("should return true for string->includes()", function($test){
-    $test->assertTrue(str('Test string')->includes('sing'));
+    $test->assertTrue(str('Test string')->includes('ing'));
+});
+
+test("should return true for array->includes()", function($test){
+    $test->assertTrue(arr(['test', 'array'])->includes('test'));
 });
